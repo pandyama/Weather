@@ -10,8 +10,8 @@
 
     <EditText
         android:id="@+id/buttonSearch"
-        android:layout_width="174dp"
-        android:layout_height="41dp"
+        android:layout_width="207dp"
+        android:layout_height="49dp"
         android:background="@drawable/button"
         android:hint="City"
         android:inputType="text"
@@ -22,73 +22,531 @@
         android:textColorHint="@color/text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.067"
+        app:layout_constraintHorizontal_bias="0.014"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.802" />
+        app:layout_constraintVertical_bias="0.818" />
 
     <TextView
         android:id="@+id/weather"
-        android:layout_width="174dp"
-        android:layout_height="154dp"
+        android:layout_width="409dp"
+        android:layout_height="99dp"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="28dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.238" />
+        app:layout_constraintVertical_bias="0.139" />
 
     <TextView
         android:id="@+id/descriptionId"
-        android:layout_width="170dp"
-        android:layout_height="37dp"
+        android:layout_width="99dp"
+        android:layout_height="42dp"
         android:textAlignment="center"
         android:textColor="#000000"
-        android:textSize="16dp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.371"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.286" />
+        app:layout_constraintVertical_bias="0.194" />
 
     <TextView
         android:id="@+id/cityId"
-        android:layout_width="333dp"
-        android:layout_height="77dp"
+        android:layout_width="411dp"
+        android:layout_height="61dp"
         android:textAlignment="center"
         android:textColor="#3E2D92"
         android:textSize="38dp"
         app:layout_constraintBottom_toTopOf="@+id/weather"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.333" />
 
     <ImageView
         android:id="@+id/weatherIcon"
-        android:layout_width="68dp"
-        android:layout_height="48dp"
+        android:layout_width="52dp"
+        android:layout_height="34dp"
         app:layout_constraintBottom_toBottomOf="@+id/weather"
-        app:layout_constraintEnd_toEndOf="@+id/weather"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.619"
         app:layout_constraintStart_toStartOf="@+id/weather"
-        app:layout_constraintTop_toBottomOf="@+id/descriptionId"
+        app:layout_constraintTop_toBottomOf="@+id/cityId"
+        app:layout_constraintVertical_bias="0.771"
         app:srcCompat="@android:color/background_light" />
 
     <ImageView
         android:id="@+id/refreshArrow"
-        android:layout_width="28dp"
-        android:layout_height="16dp"
+        android:layout_width="37dp"
+        android:layout_height="37dp"
         android:background="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.065"
+        app:layout_constraintHorizontal_bias="0.076"
         app:layout_constraintStart_toEndOf="@+id/buttonSearch"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.786"
+        app:layout_constraintVertical_bias="0.808"
+        app:srcCompat="@drawable/ic_refresh_circle"
+        tools:ignore="VectorDrawableCompat" />
+
+    <TextView
+        android:id="@+id/dayOne"
+        android:layout_width="317dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="16dp"
+        android:text="Today"
+        android:textAlignment="textStart"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.074"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/weather" />
+
+    <TextView
+        android:id="@+id/dayThree"
+        android:layout_width="317dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="16dp"
+        android:text="Day After"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.085"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dayTwo" />
+
+    <TextView
+        android:id="@+id/dayFour"
+        android:layout_width="317dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="16dp"
+        android:text="Day After After"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.085"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dayThree" />
+
+    <TextView
+        android:id="@+id/dayFive"
+        android:layout_width="317dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="16dp"
+        android:text="Too Far"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.085"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dayFour" />
+
+    <TextView
+        android:id="@+id/dayTwo"
+        android:layout_width="317dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="16dp"
+        android:text="Tomorrow"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.085"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dayOne" />
+
+    <TextView
+        android:id="@+id/dayOneHigh"
+        android:layout_width="39dp"
+        android:layout_height="28dp"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/dayOne"
+        app:layout_constraintEnd_toEndOf="@+id/dayOne"
+        app:layout_constraintHorizontal_bias="0.73"
+        app:layout_constraintStart_toStartOf="@+id/dayOne"
+        app:layout_constraintTop_toTopOf="@+id/dayOne"
+        app:layout_constraintVertical_bias="0.476" />
+
+    <TextView
+        android:id="@+id/dayFourHigh"
+        android:layout_width="39dp"
+        android:layout_height="28dp"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/dayFour"
+        app:layout_constraintEnd_toEndOf="@+id/dayFour"
+        app:layout_constraintHorizontal_bias="0.73"
+        app:layout_constraintStart_toStartOf="@+id/dayFour"
+        app:layout_constraintTop_toTopOf="@+id/dayFour"
+        app:layout_constraintVertical_bias="0.476" />
+
+    <TextView
+        android:id="@+id/dayFiveLow"
+        android:layout_width="39dp"
+        android:layout_height="28dp"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/dayFive"
+        app:layout_constraintEnd_toEndOf="@+id/dayFive"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/dayFive"
+        app:layout_constraintTop_toTopOf="@+id/dayFive"
+        app:layout_constraintVertical_bias="0.476" />
+
+    <TextView
+        android:id="@+id/dayFiveHigh"
+        android:layout_width="39dp"
+        android:layout_height="28dp"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/dayFive"
+        app:layout_constraintEnd_toEndOf="@+id/dayFive"
+        app:layout_constraintHorizontal_bias="0.73"
+        app:layout_constraintStart_toStartOf="@+id/dayFive"
+        app:layout_constraintTop_toTopOf="@+id/dayFive"
+        app:layout_constraintVertical_bias="0.476" />
+
+    <TextView
+        android:id="@+id/dayFourLow"
+        android:layout_width="39dp"
+        android:layout_height="28dp"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/dayFour"
+        app:layout_constraintEnd_toEndOf="@+id/dayFour"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/dayFour"
+        app:layout_constraintTop_toTopOf="@+id/dayFour"
+        app:layout_constraintVertical_bias="0.476" />
+
+    <ImageView
+        android:id="@+id/dayFourDown"
+        android:layout_width="16dp"
+        android:layout_height="11dp"
+        app:layout_constraintBottom_toBottomOf="@+id/dayFour"
+        app:layout_constraintEnd_toEndOf="@+id/dayFour"
+        app:layout_constraintHorizontal_bias="0.867"
+        app:layout_constraintStart_toStartOf="@+id/dayFour"
+        app:layout_constraintTop_toTopOf="@+id/dayFour"
+        app:layout_constraintVertical_bias="0.473"
+        app:srcCompat="@drawable/down" />
+
+    <TextView
+        android:id="@+id/dayThreeHigh"
+        android:layout_width="39dp"
+        android:layout_height="28dp"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="18sp"
+
+        app:layout_constraintBottom_toBottomOf="@+id/dayThree"
+        app:layout_constraintEnd_toEndOf="@+id/dayThree"
+        app:layout_constraintHorizontal_bias="0.73"
+        app:layout_constraintStart_toStartOf="@+id/dayThree"
+        app:layout_constraintTop_toTopOf="@+id/dayThree"
+        app:layout_constraintVertical_bias="0.476" />
+
+    <ImageView
+        android:id="@+id/dayThreeUp"
+        android:layout_width="16dp"
+        android:layout_height="11dp"
+        app:layout_constraintBottom_toBottomOf="@+id/dayThree"
+        app:layout_constraintEnd_toEndOf="@+id/dayThree"
+        app:layout_constraintHorizontal_bias="0.621"
+        app:layout_constraintStart_toStartOf="@+id/dayThree"
+        app:layout_constraintTop_toTopOf="@+id/dayThree"
+        app:layout_constraintVertical_bias="0.473"
         app:srcCompat="@drawable/refresh" />
+
+    <TextView
+        android:id="@+id/dayThreeLow"
+        android:layout_width="39dp"
+        android:layout_height="28dp"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/dayThree"
+        app:layout_constraintEnd_toEndOf="@+id/dayThree"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/dayThree"
+        app:layout_constraintTop_toTopOf="@+id/dayThree"
+        app:layout_constraintVertical_bias="0.476" />
+
+    <ImageView
+        android:id="@+id/dayThreeDown"
+        android:layout_width="16dp"
+        android:layout_height="11dp"
+        app:layout_constraintBottom_toBottomOf="@+id/dayThree"
+        app:layout_constraintEnd_toEndOf="@+id/dayThree"
+        app:layout_constraintHorizontal_bias="0.867"
+
+        app:layout_constraintStart_toStartOf="@+id/dayThree"
+        app:layout_constraintTop_toTopOf="@+id/dayThree"
+        app:layout_constraintVertical_bias="0.473"
+        app:srcCompat="@drawable/down" />
+
+    <TextView
+        android:id="@+id/dayTwoLow"
+        android:layout_width="39dp"
+        android:layout_height="28dp"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/dayTwo"
+        app:layout_constraintEnd_toEndOf="@+id/dayTwo"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/dayTwo"
+        app:layout_constraintTop_toTopOf="@+id/dayTwo"
+        app:layout_constraintVertical_bias="0.476" />
+
+    <ImageView
+        android:id="@+id/dayTwoDown"
+        android:layout_width="16dp"
+        android:layout_height="11dp"
+        app:layout_constraintBottom_toBottomOf="@+id/dayTwo"
+        app:layout_constraintEnd_toEndOf="@+id/dayTwo"
+        app:layout_constraintHorizontal_bias="0.867"
+        app:layout_constraintStart_toStartOf="@+id/dayTwo"
+        app:layout_constraintTop_toTopOf="@+id/dayTwo"
+        app:layout_constraintVertical_bias="0.473"
+        app:srcCompat="@drawable/down" />
+
+    <TextView
+        android:id="@+id/dayTwoHigh"
+        android:layout_width="39dp"
+        android:layout_height="28dp"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/dayTwo"
+        app:layout_constraintEnd_toEndOf="@+id/dayTwo"
+        app:layout_constraintHorizontal_bias="0.73"
+        app:layout_constraintStart_toStartOf="@+id/dayTwo"
+        app:layout_constraintTop_toTopOf="@+id/dayTwo"
+        app:layout_constraintVertical_bias="0.476" />
+
+    <ImageView
+        android:id="@+id/dayOneUp"
+        android:layout_width="16dp"
+        android:layout_height="11dp"
+        app:layout_constraintBottom_toBottomOf="@+id/dayOne"
+        app:layout_constraintEnd_toEndOf="@+id/dayOne"
+        app:layout_constraintHorizontal_bias="0.621"
+        app:layout_constraintStart_toStartOf="@+id/dayOne"
+        app:layout_constraintTop_toTopOf="@+id/dayOne"
+        app:layout_constraintVertical_bias="0.471"
+        app:srcCompat="@drawable/refresh" />
+
+    <ImageView
+        android:id="@+id/dayTwoUp"
+        android:layout_width="16dp"
+        android:layout_height="11dp"
+        app:layout_constraintBottom_toBottomOf="@+id/dayTwo"
+        app:layout_constraintEnd_toEndOf="@+id/dayTwo"
+        app:layout_constraintHorizontal_bias="0.621"
+        app:layout_constraintStart_toStartOf="@+id/dayTwo"
+        app:layout_constraintTop_toTopOf="@+id/dayTwo"
+        app:layout_constraintVertical_bias="0.473"
+        app:srcCompat="@drawable/refresh" />
+
+    <ImageView
+        android:id="@+id/dayFourUp"
+        android:layout_width="16dp"
+        android:layout_height="11dp"
+        app:layout_constraintBottom_toBottomOf="@+id/dayFour"
+        app:layout_constraintEnd_toEndOf="@+id/dayFour"
+        app:layout_constraintHorizontal_bias="0.621"
+        app:layout_constraintStart_toStartOf="@+id/dayFour"
+        app:layout_constraintTop_toTopOf="@+id/dayFour"
+        app:layout_constraintVertical_bias="0.473"
+        app:srcCompat="@drawable/refresh" />
+
+    <ImageView
+        android:id="@+id/dayFiveUp"
+        android:layout_width="16dp"
+        android:layout_height="11dp"
+        app:layout_constraintBottom_toBottomOf="@+id/dayFive"
+        app:layout_constraintEnd_toEndOf="@+id/dayFive"
+        app:layout_constraintHorizontal_bias="0.621"
+        app:layout_constraintStart_toStartOf="@+id/dayFive"
+        app:layout_constraintTop_toTopOf="@+id/dayFive"
+        app:layout_constraintVertical_bias="0.473"
+        app:srcCompat="@drawable/refresh" />
+
+    <ImageView
+        android:id="@+id/dayFiveDown"
+        android:layout_width="16dp"
+        android:layout_height="11dp"
+        app:layout_constraintBottom_toBottomOf="@+id/dayFive"
+        app:layout_constraintEnd_toEndOf="@+id/dayFive"
+        app:layout_constraintHorizontal_bias="0.867"
+        app:layout_constraintStart_toStartOf="@+id/dayFive"
+        app:layout_constraintTop_toTopOf="@+id/dayFive"
+        app:layout_constraintVertical_bias="0.473"
+        app:srcCompat="@drawable/down" />
+
+    <TextView
+        android:id="@+id/dayOneLow"
+        android:layout_width="39dp"
+        android:layout_height="28dp"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/dayOne"
+        app:layout_constraintEnd_toEndOf="@+id/dayOne"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/dayOne"
+        app:layout_constraintTop_toTopOf="@+id/dayOne"
+        app:layout_constraintVertical_bias="0.38" />
+
+    <ImageView
+        android:id="@+id/dayOneDown2"
+        android:layout_width="16dp"
+        android:layout_height="11dp"
+        app:layout_constraintBottom_toBottomOf="@+id/dayOne"
+        app:layout_constraintEnd_toEndOf="@+id/dayOne"
+        app:layout_constraintHorizontal_bias="0.867"
+        app:layout_constraintStart_toStartOf="@+id/dayOne"
+        app:layout_constraintTop_toTopOf="@+id/dayOne"
+        app:layout_constraintVertical_bias="0.473"
+        app:srcCompat="@drawable/down" />
+
+    <TextView
+        android:id="@+id/dayOneCondition"
+        android:layout_width="98dp"
+        android:layout_height="16dp"
+        android:textAlignment="center"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/dayOne"
+        app:layout_constraintEnd_toEndOf="@+id/dayOne"
+        app:layout_constraintHorizontal_bias="0.004"
+        app:layout_constraintStart_toStartOf="@+id/dayOne"
+        app:layout_constraintTop_toTopOf="@+id/dayOne"
+        app:layout_constraintVertical_bias="0.941" />
+
+    <TextView
+        android:id="@+id/dayThreeCondition"
+        android:layout_width="98dp"
+        android:layout_height="16dp"
+        android:textAlignment="center"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/dayThree"
+        app:layout_constraintEnd_toEndOf="@+id/dayThree"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/dayThree"
+        app:layout_constraintTop_toTopOf="@+id/dayThree"
+        app:layout_constraintVertical_bias="0.939" />
+
+    <TextView
+        android:id="@+id/dayFourCondition"
+        android:layout_width="98dp"
+        android:layout_height="16dp"
+        android:textAlignment="center"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/dayFour"
+        app:layout_constraintEnd_toEndOf="@+id/dayFour"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/dayFour"
+        app:layout_constraintTop_toTopOf="@+id/dayFour"
+        app:layout_constraintVertical_bias="0.969" />
+
+    <TextView
+        android:id="@+id/dayFiveCondition"
+        android:layout_width="98dp"
+        android:layout_height="16dp"
+        android:textAlignment="center"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/dayFive"
+        app:layout_constraintEnd_toEndOf="@+id/dayFive"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/dayFive"
+        app:layout_constraintTop_toTopOf="@+id/dayFive"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/dayTwoCondition"
+        android:layout_width="98dp"
+        android:layout_height="16dp"
+        android:textAlignment="center"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/dayTwo"
+        app:layout_constraintEnd_toEndOf="@+id/dayTwo"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/dayTwo"
+        app:layout_constraintTop_toTopOf="@+id/dayTwo"
+        app:layout_constraintVertical_bias="0.941" />
+
+    <ImageView
+        android:id="@+id/dayTwoIcon"
+        android:layout_width="28dp"
+        android:layout_height="21dp"
+        android:background="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/dayTwo"
+        app:layout_constraintEnd_toEndOf="@+id/dayTwo"
+        app:layout_constraintHorizontal_bias="0.439"
+        app:layout_constraintStart_toStartOf="@+id/dayTwo"
+        app:layout_constraintTop_toTopOf="@+id/dayTwo"
+        app:layout_constraintVertical_bias="0.38" />
+
+    <ImageView
+        android:id="@+id/dayFourIcon"
+        android:layout_width="28dp"
+        android:layout_height="21dp"
+        android:background="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/dayFour"
+        app:layout_constraintEnd_toEndOf="@+id/dayFour"
+        app:layout_constraintHorizontal_bias="0.439"
+        app:layout_constraintStart_toStartOf="@+id/dayFour"
+        app:layout_constraintTop_toTopOf="@+id/dayFour"
+        app:layout_constraintVertical_bias="0.38" />
+
+    <ImageView
+        android:id="@+id/dayFiveIcon"
+        android:layout_width="28dp"
+        android:layout_height="21dp"
+        android:background="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/dayFive"
+        app:layout_constraintEnd_toEndOf="@+id/dayFive"
+        app:layout_constraintHorizontal_bias="0.439"
+        app:layout_constraintStart_toStartOf="@+id/dayFive"
+        app:layout_constraintTop_toTopOf="@+id/dayFive"
+        app:layout_constraintVertical_bias="0.428" />
+
+    <ImageView
+        android:id="@+id/dayThreeIcon"
+        android:layout_width="28dp"
+        android:layout_height="21dp"
+        android:background="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/dayThree"
+        app:layout_constraintEnd_toEndOf="@+id/dayThree"
+
+        app:layout_constraintHorizontal_bias="0.439"
+        app:layout_constraintStart_toStartOf="@+id/dayThree"
+        app:layout_constraintTop_toTopOf="@+id/dayThree"
+        app:layout_constraintVertical_bias="0.38" />
+
+    <ImageView
+        android:id="@+id/dayOneIcon"
+        android:layout_width="34dp"
+        android:layout_height="23dp"
+        android:background="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/dayOne"
+        app:layout_constraintEnd_toEndOf="@+id/dayOne"
+        app:layout_constraintHorizontal_bias="0.439"
+        app:layout_constraintStart_toStartOf="@+id/dayOne"
+        app:layout_constraintTop_toTopOf="@+id/dayOne"
+        app:layout_constraintVertical_bias="0.38" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
