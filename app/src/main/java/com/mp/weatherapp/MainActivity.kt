@@ -5,9 +5,7 @@ import android.content.Context
 import android.content.SharedPreferences
 import android.net.Uri
 import android.os.Bundle
-import android.transition.Explode
 import android.view.*
-import android.view.animation.AlphaAnimation
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
@@ -19,27 +17,21 @@ import okhttp3.*
 import java.io.IOException
 import java.lang.Exception
 import java.text.DateFormat
-import java.text.SimpleDateFormat
-import java.time.Instant
-import java.time.ZoneId
-import java.util.*
-import java.util.EnumSet.range
 import kotlin.math.roundToInt
 
 
 class MainActivity : AppCompatActivity() {
 
-    private var PRIVATE_MODE = 0
     private val PREF_NAME = "testin123"
 
     var descripton: String = ""
     var temp: Int = 0
     var feelsLike: Int = 0
-    var windSpeed: Int = 0
-    var windDirection: Int = 0
-    var windGust: Int = 0
-    var sunrise: Int = 0
-    var sunset: Int = 0
+//    var windSpeed: Int = 0
+//    var windDirection: Int = 0
+//    var windGust: Int = 0
+//    var sunrise: Int = 0
+//    var sunset: Int = 0
     var name: String = ""
     var icon: String = ""
     var id: Int = 0
@@ -58,19 +50,19 @@ class MainActivity : AppCompatActivity() {
         var cityStored = sharedPref.getString("city","gg")
 
 
-        println("OPENING APP $cityStored")
+       // println("OPENING APP $cityStored")
 
 
         if(sharedPref.getString("city","toronto") != "gg"){
-            println("OPENING APP $cityStored")
+           // println("OPENING APP $cityStored")
 
             if (cityStored != null) {
-                println("OPENING APP $cityStored")
+               // println("OPENING APP $cityStored")
                 getWeather(cityStored, sharedPref)
             }
         }
 
-        println("STARTING APP shared preference is ${sharedPref.getString("city","")}")
+       // println("STARTING APP shared preference is ${sharedPref.getString("city","")}")
 
         flag = true
 
@@ -92,8 +84,7 @@ class MainActivity : AppCompatActivity() {
                     }
 
                     if(flag) {
-                        val toast =
-                            Toast.makeText(applicationContext, "Click on arrow to update weather", Toast.LENGTH_SHORT)
+                        val toast = Toast.makeText(applicationContext, "Click on arrow to update weather", Toast.LENGTH_SHORT)
                         toast.setGravity(Gravity.BOTTOM, 0, 0)
                         toast.show()
                     }
@@ -102,7 +93,7 @@ class MainActivity : AppCompatActivity() {
 
                     return@OnKeyListener true
                 } else {
-                    println("false")
+                    //println("false")
                     return@OnKeyListener false
                 }
             } catch(e: Exception){
@@ -122,9 +113,9 @@ class MainActivity : AppCompatActivity() {
             tx3.setDuration(1000)
             tx3.start()
 
-            println("BUTTON SEARCH")
-            println(buttonSearch.text.toString())
-            println(weather.text.toString())
+//            println("BUTTON SEARCH")
+//            println(buttonSearch.text.toString())
+//            println(weather.text.toString())
 
             if(buttonSearch.text.toString() == ""){
                 getWeather(cityId.text.toString(), sharedPref)
@@ -166,20 +157,31 @@ class MainActivity : AppCompatActivity() {
                 var gson = GsonBuilder().create()
                 var weatherAPI: weatherObj = gson.fromJson(body, weatherObj::class.java)
                 var weather4 = gson.fromJson(body, weatherArray::class.java)
-                icon = weather4.weather[0].icon
-                println("-------------------COORD------------------------")
-                println(weatherAPI.coord)
-                lat = weatherAPI.coord.lat
-                lon = weatherAPI.coord.lon
-                name = weatherAPI.name
+                try {
+                    icon = weather4.weather[0].icon
+//                    println("-------------------COORD------------------------")
+//                    println(weatherAPI.coord)
+                    lat = weatherAPI.coord.lat
+                    lon = weatherAPI.coord.lon
+                    name = weatherAPI.name
 
-                getForecast(lat, lon, city, pref, icon)
+                    getForecast(lat, lon, city, pref, icon)
+                }
+                catch(e: Exception){
+                    runOnUiThread{
+                        val toast = Toast.makeText(applicationContext, "City not found", Toast.LENGTH_SHORT)
+                        toast.setGravity(Gravity.BOTTOM, 0, 0)
+                        toast.show()
+                    }
+                }finally {
+                    println("Nothing")
+                }
             }
 
         })
 
         edit.putString("city",city)
-        println("-------------------CITY STORED------------------------")
+//        println("-------------------CITY STORED------------------------")
         edit.commit()
 
         println(pref.getString("city","gg"))
@@ -207,9 +209,9 @@ class MainActivity : AppCompatActivity() {
 
                 var one: oneCall = gson.fromJson(body, oneCall::class.java)
 
-                println("$city")
-                println("-------------------------ONE---------------CALL--------------------------------------------")
-                println(one.daily[1])
+//                println("$city")
+//                println("-------------------------ONE---------------CALL--------------------------------------------")
+//                println(one.daily[1])
 
                 try {
 
@@ -232,8 +234,7 @@ class MainActivity : AppCompatActivity() {
 
                     one.daily[4].temp.max = one.daily[4].temp.max - 273.15
                     one.daily[4].temp.min = one.daily[4].temp.min - 273.15
-//
-//
+
                     descripton = one.current.weather[0].description
                     temp = one.current.temp.toInt()
                     feelsLike = one.current.feels_like.toInt()
@@ -290,7 +291,7 @@ class MainActivity : AppCompatActivity() {
 //
                         val dateInfo5 = DateFormat.getDateInstance(DateFormat.FULL).format(date5)
 
-                        println(dateInfo.substringBefore(","))
+//                        println(dateInfo.substringBefore(","))
 
                         dayOne.setText(dateInfo.substringBefore(","))
                         dayOneCondition.setText(one.daily[0].weather[0].description)
@@ -496,10 +497,6 @@ class MainActivity : AppCompatActivity() {
                             dayFiveIcon.setImageResource(R.drawable.ic_cloudy_sharp)
                             //weather.setBackgroundResource(R.drawable.weatherclear)
                         }
-
-//                        for (i in 0..5){
-//                            dayOne.setText(one.daily[i].dt)
-//                        }
 
                         //---------------------------------------------------------------------------------------------------------------------------------------------------------------
 
