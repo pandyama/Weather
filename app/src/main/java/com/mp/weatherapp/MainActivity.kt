@@ -138,7 +138,7 @@ class MainActivity : AppCompatActivity() {
         var lon: Double = 0.0
         val client = OkHttpClient()
 
-        val cityCoord = "http://api.openweathermap.org/data/2.5/weather?q=$city&appid=0fe37647bf3c4095418a1c5392bb60cc"
+        val cityCoord = "http://api.openweathermap.org/data/2.5/weather?q=$city&appid=GET YOUR OWN KEY"
         val requestCoord = Request.Builder().url(cityCoord).build()
         val callCoord = client.newCall(requestCoord)
 
@@ -190,7 +190,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun getForecast(lat: Double, lon: Double, city: String, pref: SharedPreferences, icon: String){
         val client = OkHttpClient()
-        val url = "http://api.openweathermap.org/data/2.5/onecall?lat=$lat&lon=$lon&appid=0fe37647bf3c4095418a1c5392bb60cc"
+        val url = "http://api.openweathermap.org/data/2.5/onecall?lat=$lat&lon=$lon&appid=GET YOUR OWN KEY"
         val request = Request.Builder().url(url).build()
         val call = client.newCall(request)
 
